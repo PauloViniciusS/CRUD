@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+<div class="container" id='hideMe'>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+</div>
+          <div class="page-header">
+<div id="banner">
+<h1 style="text-align: center;">Mercado</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="/add">Adicionar ao carrinho</a>
+        </div>
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for p in produto %}
+                <tr id="trtabela">
+                    <td>{{p.nome}}</td>
+                    <td>R$ {{p.preco}}</td>
+                    <td>
+                        <a href="/edit/{{p.id}}">Editar</a> |
+                        <a href="/delete/{{p.id}}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
