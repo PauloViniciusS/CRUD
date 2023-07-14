@@ -7,34 +7,34 @@
 </head>
 <body>
 <div class="container" id='hideMe'>
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul id="messages" class="list-unstyled">
-                    {% for message in messages %}
-                        <li class="alert alert-success">{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endwith %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 </div>
-          <div class="page-header">
-<div id="banner">
-    <h1 style="text-align: center">Adicionar novo produto</h1>
-</div>
-<form action="/add" class="container" method="post">
-    <br>
-  <div class="row">
-      <div class="col-md-6">
-          <input type="text" name="nome" id="nome" placeholder="Produto" class="form-control">
-      </div>
-      <div class="col-md-6">
-          <input type="text" name="preco" id="preco" placeholder="Preço" class="form-control">
-      </div>
-  </div>
-  <br>
-  <div class="row col-xs-12">
-      <button type="submit" class="btn btn-block btn-success">Enviar</button>
-  </div>
-</form>
+<div class="page-header">
+    <div id="banner">
+        <h1 style="text-align: center">Adicionar novo produto</h1>
+    </div>
+    <form action="/add" class="container" method="post">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="nome" id="nome" placeholder="Produto" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="preco" id="preco" placeholder="Preço" class="form-control">
+            </div>
+        </div>
+        <br>
+        <div class="row col-xs-12">
+            <button type="submit" class="btn btn-block btn-success">Enviar</button>
+        </div>
+    </form>
 </body>
 </html>
