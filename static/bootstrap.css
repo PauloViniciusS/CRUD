@@ -320,7 +320,9 @@ caption {
   align-content: center;
   width: 100%;
 }
-
+#cbutton{
+  margin-bottom: 10px;
+}
 th {
   text-align: inherit;
   text-align: -webkit-match-parent;

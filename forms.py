@@ -12,4 +12,4 @@ class Cadastro(FlaskForm):
 class Login(FlaskForm):
     username = StringField('Nome de usuario', [validators.DataRequired(), validators.length(min=6, max=50)])
     password = PasswordField('Senha', [validators.DataRequired(), validators.length(min=6, max=80)])
-    cadastro = SubmitField('Cadastro')
+    login = SubmitField('login')
